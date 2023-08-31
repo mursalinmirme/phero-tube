@@ -34,7 +34,7 @@
     <header class="w-11/12 mx-auto py-10 flex items-center bg-sky-100">
             <!-- logo -->
         <div class="flex-1">
-            <img src="photos/Logo.png" alt="">
+            <img src="./photos/Logo.png" alt="">
         </div>
         <!-- sort button -->
         <div class="flex-1 text-center">
@@ -50,11 +50,46 @@
         <section>
             <!-- categories buttons -->
             <div class="flex gap-5 justify-center mt-3">
-
+                <button class="bg-gray-300 px-3 py-2 text-base font-medium rounded">All</button>
+                <button class="bg-gray-300 px-3 py-2 text-base font-medium rounded">Music</button>
+                <button class="bg-gray-300 px-3 py-2 text-base font-medium rounded">Comedy</button>
+                <button class="bg-gray-300 px-3 py-2 text-base font-medium rounded">Drawing</button>
             </div>
             <!-- videos cards container -->
-            <div>
-                
+            <div class="grid grid-cols-4 gap-6 mt-7">
+
+
+
+                <!-- single card -->
+                <div class="card w[330.15px] card-compact shadow-xl">
+                    <figure class="relative">
+                        <img class="w-full" src="./photos/card.jpg" alt="Shoes" />
+                        <p class="absolute bottom-2 right-2 text-white text-xs bg-red-500 px-2 py-1 rounded font-medium bg-red">3hrs 56min ago</p>
+                    </figure>
+                    <!-- videos desc -->
+                    <div class="flex gap-2 mt-4">
+                      <!-- profile -->
+                      <div class="w-16">
+                        <img class="w-10 h-10" src="./photos/Icon.png" alt="">
+                      </div>
+                      <!-- title -->
+                      <div>
+                        <h2 class="text-base font-bold">Building a Winning UX Strategy Using the Kano Model</h2>
+                        <div class="flex gap-3 items-center mt-2">
+                            <h5 class="text-sm font-normal text-gray-500">Awlad Hossain</h5>
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <p class="text-sm text-gray-500 font-normal mt-2">91k views</p>
+                      </div>
+                    </div>
+                </div>
+                <!-- single card end -->
+
+
+
+
+
+
             </div>
         </section>
     </main>
