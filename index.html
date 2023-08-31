@@ -13,9 +13,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- font awsome link -->
     <script src="https://kit.fontawesome.com/6d208b1cbc.js" crossorigin="anonymous"></script>
+    <!-- custom tailwind class making -->
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              },
+              fontFamily: {
+                'fontInter': ['Inter', 'sans-serif']
+              }
+            }
+          }
+        }
+      </script>
 </head>
-<body>
-    
+<body class="font-fontInter">
+<!-- header -->
+    <header class="w-11/12 mx-auto py-10 flex items-center bg-sky-100">
+            <!-- logo -->
+        <div class="flex-1">
+            <img src="photos/Logo.png" alt="">
+        </div>
+        <!-- sort button -->
+        <div class="flex-1 text-center">
+            <button class="bg-gray-300 text-lg px-5 py-3 font-medium rounded hover:bg-gray-200">Sort by view</button>
+        </div>
+        <!-- blog button -->
+        <div class="flex-1 text-right">
+            <a class="text-lg font-medium px-5 py-3 rounded text-white bg-red-500 hover:bg-red-400" href="#">Blog</a>
+        </div>
+    </header>
+    <!-- main -->
+    <main class="w-11/12 mx-auto">
+        <section>
+            <!-- categories buttons -->
+            <div class="flex gap-5 justify-center mt-3">
+
+            </div>
+            <!-- videos cards container -->
+            <div>
+                
+            </div>
+        </section>
+    </main>
     <script src="js/script.js"></script>
 </body>
 </html>
