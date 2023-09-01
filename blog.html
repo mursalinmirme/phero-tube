@@ -4,12 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHtube Blog</title>
+    <!-- tailwind and daisyUi link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font family link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- font awsome link -->
+    <script src="https://kit.fontawesome.com/6d208b1cbc.js" crossorigin="anonymous"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                titleColor: '#171717'
+              },
+              fontFamily: {
+                'fontInter': ['Inter', 'sans-serif']
+              }
+            }
+          }
+        }
+      </script>
 </head>
-<body>
-    <ul>
-        <li>Discuss the scope of var, let, and const</li>
-           <li>Tell us the use cases of null and undefined</li>
-        <li>What do you mean by REST API?</li>
-    </ul>
+<body class="font-fontInter">
+    <section class="w-11/12 md:w-10/12 mx-auto mt-10">
+      <!-- blog 1 start -->
+        <div class="p-5 flex flex-col lg:flex-row items-center gap-8 border rounded-lg mb-8">
+            <div class="lg:w-[30%]">
+              <img class="w-full rounded-xl" src="./photos/var-const-let.jpg" alt="">
+                </div>
+                  <div class="lg:w-[70%]">
+                <h2 class="text-2xl font-semibold text-gray-800">Qa-1. Discuss the scope of var, let, and const</h2>
+              <hr class="border-b-gray-500 my-5">
+            <p class="text-lg text-gray-700">var declarations are globally scoped or function scoped while let and const are block scoped. var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared.</p>
+          </div>
+         </div>
+        <!-- blog 1 end -->
+      <!-- blog 2 start -->
+        <div class="p-5 flex flex-col lg:flex-row items-center gap-8 border rounded-lg mb-8">
+            <div class="lg:w-[30%]">
+              <img class="w-full rounded-xl" src="./photos/null-undefined.jpg" alt="">
+                </div>
+                  <div class="lg:w-[70%]">
+                <h2 class="text-2xl font-semibold text-gray-800">Qa-2. Tell us the use cases of null and undefined</h2>
+              <hr class="border-b-gray-500 my-5">
+            <p class="text-lg text-gray-700">Undefined means the variable has been declared, but its value has not been assigned. Null means an empty value or a blank value. The typeof() operator returns undefined for an undefined variable. The typeof() operator returns the type as an object for a variable whose value is assigned as null. </p>
+          </div>
+         </div>
+        <!-- blog 2 end -->
+      <!-- blog 3 start -->
+        <div class="p-5 flex flex-col lg:flex-row items-center gap-8 border rounded-lg mb-8">
+            <div class="lg:w-[30%]">
+              <img class="w-full rounded-xl" src="./photos/rest-api.jpg" alt="">
+                </div>
+                  <div class="lg:w-[70%]">
+                <h2 class="text-2xl font-semibold text-gray-800">Qa-3. What do you mean by REST API?</h2>
+              <hr class="border-b-gray-500 my-5">
+            <p class="text-lg text-gray-700">What is a REST API? An API, or application programming interface, is a set of rules that define how applications or devices can connect to and communicate with each other. A REST API is an API that conforms to the design principles of the REST, or representational state transfer architectural style.</p>
+          </div>
+         </div>
+        <!-- blog 3 end -->
+       
+    </section>
 </body>
 </html>

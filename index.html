@@ -47,11 +47,11 @@
         </div>
     <!-- sort button -->
     <div class="flex-1 text-center">
-      <button class="bg-sortBtnBg text-lg px-5 py-3 font-medium rounded text-sortBtnColor hover:bg-gray-200">Sort by view</button>
+      <button onclick="sortBtnHandeler()" class="bg-sortBtnBg text-lg px-5 py-2.5 font-medium rounded text-sortBtnColor hover:bg-gray-200">Sort by view</button>
         </div>
     <!-- blog button -->
     <div class="flex-1 text-right">
-      <a class="text-lg font-medium px-5 py-3 rounded text-white bg-activeBg hover:bg-red-500" href="blog.html">Blog</a>
+      <a class="text-lg font-medium px-5 py-2.5 rounded text-white bg-activeBg hover:bg-red-500" href="blog.html">Blog</a>
         </div>
   </header>
   <!-- main -->
@@ -62,9 +62,18 @@
 
       </div>
       <!-- videos cards container -->
-      <div id="cardsContainer" class="grid grid-cols-4 gap-6 mt-8">
+      <div id="cardsContainer" class="grid grid-cols-4 gap-6 mt-8 mb-8">
 
             </div>
+      <!-- No data found page -->
+      <div id="noDataFound" class="hidden">
+        <div class="flex items-center py-28 justify-center">
+          <div class="text-center">
+            <img class="mx-auto" src="./photos/Icon.png" alt="">
+            <h3 class="text-3xl text-titleColor leading-snug font-bold mt-7">Oops!! Sorry, There is no <br> content here</h3>
+          </div>
+        </div>
+      </div>
 
         </section>
     </main>
