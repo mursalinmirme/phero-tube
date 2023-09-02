@@ -51,15 +51,15 @@ const showCards = (cards) => {
         const hours = Math.floor(hoursFloat);
         const minutesFloat = totalMinutes % 60;
         const minutes = Math.floor(minutesFloat);
-        const time = `${hours}hrs ${minutes}min ago`
-
+        const time = `${hours}hrs ${minutes}min ago`;
+        const times = `<p class="absolute bottom-2 right-2 text-white text-xs bg-timeBg px-2 py-1 rounded font-medium bg-red">${time}</p>`;
         const carddiv = document.createElement('div');
         carddiv.classList = `card card-compact rounded-none`;
         carddiv.innerHTML = `
         <!-- single card -->
           <figure class="relative">
             <img class="w-full h-48 rounded-lg" src="${card.thumbnail}" alt="Shoes" />
-              <p class="absolute bottom-2 right-2 text-white text-xs bg-timeBg px-2 py-1 rounded font-medium bg-red">${card.others.posted_date ? time : ''}</p>
+              ${card.others.posted_date ? times : ''}
                 </figure>
               <!-- videos desc -->
             <div class="flex gap-3 mt-4">
