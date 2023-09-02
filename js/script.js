@@ -1,5 +1,5 @@
 let currentCateId = null;
-// showCategory function for showing all categories
+// load the categories from api
 const loadCategory = async () => {
     const cateUrl = 'https://openapi.programming-hero.com/api/videos/categories';
     const fetchCate = await fetch(cateUrl);
@@ -7,13 +7,12 @@ const loadCategory = async () => {
     const categories = getCate.data;
     showCategory(categories);
 
-    // console.log(categories);
 }
+// show the categories button by taking an objects as a parameter
     const showCategory = async (categories) => {
 
     const cateContainer = document.getElementById('cateContainer');
     categories.forEach(element => {
-        // console.log(element.category_id);
         const div = document.createElement('div');
         div.innerHTML = `
         <button onclick="categoriesShow(${'this'},${element.category_id})" id="${'cateBtn'+element.category_id}" class="px-4 py-2 text-sm md:text-base text-cateBtnColor font-medium rounded bg-cateBtnBg">${element.category}</button>
@@ -22,10 +21,10 @@ const loadCategory = async () => {
         showDefalutActiveBtn();
     });
 }
-// call the showCategory function
+// call the showCategory function for showing default categories cards
 loadCategory();
 
-// show all cards 
+// load cards data from api
 const loadCards = async (cateId=1000) => {
     const cardsUrl = `https://openapi.programming-hero.com/api/videos/category/${cateId}`;
     const fetchCards = await fetch(cardsUrl);
@@ -33,11 +32,10 @@ const loadCards = async (cateId=1000) => {
     const cards = getCards.data;
     showCards(cards);
 }
-
+// show the cards by taing an categories object
 const showCards = (cards) => {
-
-    // console.log(cards);
     const notFoundContainer = document.getElementById('noDataFound');
+    // if the parameter objects length is 0 showing the found not page
     if(cards.length === 0){
       notFoundContainer.classList.remove('hidden');
     }else{
@@ -82,18 +80,16 @@ const showCards = (cards) => {
         <!-- single card end -->
         `;
         cardsContainer.appendChild(carddiv);
-        // console.log(card);
 
     })
 }
-// call showCards function
+// call loadCards function for when the page will open then showing default cards
 loadCards();
 
-// categories specific showing
+// categories onclick function for active btn and pass category id
 const categoriesShow = (target, cateId) => {
   loadCards(cateId);
     currentCateId = cateId;
-    // loadCategory();
     const btnparent = target.parentElement.parentElement.children;
     for(const btnPar of btnparent){
       const btn = btnPar.children[0];
@@ -102,7 +98,7 @@ const categoriesShow = (target, cateId) => {
     target.classList = `px-4 py-2 text-sm md:text-base text-white bg-activeBg font-medium rounded`;
 }
 
-// sort by view button
+// sortBtnHandeler function is for arrange the cards from decending order
 const sortBtnHandeler = async () => {
   const cardsUrl = `https://openapi.programming-hero.com/api/videos/category/${currentCateId ? currentCateId : 1000}`;
   const fetchCards = await fetch(cardsUrl);
@@ -111,16 +107,13 @@ const sortBtnHandeler = async () => {
   // run a loop for cut the k letter and change he views data type
   for(const item of sortArray){
     let viewsString = item.others.views;
-    let viewsSplit = viewsString.split('');
-    viewsSplit.pop();
-    let newLine = viewsSplit;
-    const makeJoin = newLine.join('');
+    let mkViewsSplit = viewsString.split('');
+    mkViewsSplit.pop();
+    const makeJoin = mkViewsSplit.join('');
     const viewsNumber = makeJoin;
-    console.log(viewsNumber);
     item.others.views = viewsNumber;
   }
   sortArray.sort((a, b) => parseFloat(b.others.views) - parseFloat(a.others.views));
-  // item.others.views = viewsNumber;
   for(const sortItem of sortArray){
     sortItem.others.views = `${sortItem.others.views}K`;
   }
