@@ -31,41 +31,48 @@
 <body class="font-fontInter">
     <section class="w-11/12 md:w-10/12 mx-auto mt-10">
       <!-- blog 1 start -->
-        <div class="p-5 flex flex-col lg:flex-row items-center gap-8 border rounded-lg mb-8">
+        <div class="p-5 flex flex-col lg:flex-row items-center gap-8 border shadow-md rounded-lg mb-8">
             <div class="lg:w-[30%]">
-              <img class="w-full rounded-xl" src="./photos/var-const-let.jpg" alt="">
+              <img class="w-full rounded-xl" src="./photos/var-const-let4.jpg" alt="">
                 </div>
                   <div class="lg:w-[70%]">
-                <h2 class="text-2xl font-semibold text-gray-800">Qa-1. Discuss the scope of var, let, and const</h2>
+                <h2 class="text-2xl font-semibold text-gray-800">The scope of var, let, and const</h2>
               <hr class="border-b-gray-500 my-5">
-            <p class="text-lg text-gray-700">var declarations are globally scoped or function scoped while let and const are block scoped. var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared.</p>
+            <p class="text-lg text-gray-700">Scope essentially means where these variables are available for use.var declarations are globally scoped.The scope is global when a var variable is declared outside a function. This means that any variable that is declared with var outside a function block is available for use in the whole window.A block is a chunk of code bounded by {}. A block lives in curly braces. Anything within curly braces is a block.So a variable declared in a block with let  is only available for use within that block.Variables declared with the const maintain constant values. const declarations share some similarities with let declarations.Like let declarations, const declarations can only be accessed within the block they were declared.</p>
           </div>
          </div>
         <!-- blog 1 end -->
       <!-- blog 2 start -->
-        <div class="p-5 flex flex-col lg:flex-row items-center gap-8 border rounded-lg mb-8">
+        <div class="p-5 flex flex-col lg:flex-row items-center gap-8 border shadow-md rounded-lg mb-8">
             <div class="lg:w-[30%]">
               <img class="w-full rounded-xl" src="./photos/null-undefined.jpg" alt="">
                 </div>
                   <div class="lg:w-[70%]">
-                <h2 class="text-2xl font-semibold text-gray-800">Qa-2. Tell us the use cases of null and undefined</h2>
+                <h2 class="text-2xl font-semibold text-gray-800">The use cases of null and undefined</h2>
               <hr class="border-b-gray-500 my-5">
-            <p class="text-lg text-gray-700">Undefined means the variable has been declared, but its value has not been assigned. Null means an empty value or a blank value. The typeof() operator returns undefined for an undefined variable. The typeof() operator returns the type as an object for a variable whose value is assigned as null. </p>
+            <p class="text-lg text-gray-700">Null is basically an assignment value given to a variable. The variable which has been assigned as null contains no value.
+
+              When we assign null as a value to any variable, it means that it is empty or blank. It is to show that the variable has no value. Also, null is an object in JavaScript. When it gets assigned to a variable, it represents no value.
+              
+              As the name suggests, undefined means "not defined". So we declare a variable but do not assign a value to it, the variable becomes undefined.
+              
+              Unlike null, the value of an undefined variable is set by JavaScript as undefined. The variable gets created at the run-time. When we do not pass an argument for a function parameter, the default value is taken as undefined. Besides, when a function doesn't return a value, it returns undefined.</p>
           </div>
          </div>
         <!-- blog 2 end -->
       <!-- blog 3 start -->
-        <div class="p-5 flex flex-col lg:flex-row items-center gap-8 border rounded-lg mb-8">
+        <div class="p-5 flex flex-col lg:flex-row items-center gap-8 border shadow-md rounded-lg mb-8">
             <div class="lg:w-[30%]">
               <img class="w-full rounded-xl" src="./photos/rest-api.jpg" alt="">
                 </div>
                   <div class="lg:w-[70%]">
-                <h2 class="text-2xl font-semibold text-gray-800">Qa-3. What do you mean by REST API?</h2>
+                <h2 class="text-2xl font-semibold text-gray-800">What does mean by REST API?</h2>
               <hr class="border-b-gray-500 my-5">
-            <p class="text-lg text-gray-700">What is a REST API? An API, or application programming interface, is a set of rules that define how applications or devices can connect to and communicate with each other. A REST API is an API that conforms to the design principles of the REST, or representational state transfer architectural style.</p>
+            <p class="text-lg text-gray-700">An API, or application programming interface, is a set of rules that define how applications or devices can connect to and communicate with each other. A REST API is an API that conforms to the design principles of the REST, or representational state transfer architectural style.REST APIs communicate via HTTP requests to perform standard database functions like creating, reading, updating, and deleting records (also known as CRUD) within a resource. For example, a REST API would use a GET request to retrieve a record, a POST request to create one, a PUT request to update a record, and a DELETE request to delete one. All HTTP methods can be used in API calls.</p>
           </div>
          </div>
         <!-- blog 3 end -->
+
        
     </section>
 </body>

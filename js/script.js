@@ -16,7 +16,7 @@ const loadCategory = async () => {
         // console.log(element.category_id);
         const div = document.createElement('div');
         div.innerHTML = `
-        <button onclick="categoriesShow(${'this'},${element.category_id})" id="${'cateBtn'+element.category_id}" class="px-4 py-2 text-base text-cateBtnColor font-medium rounded bg-cateBtnBg">${element.category}</button>
+        <button onclick="categoriesShow(${'this'},${element.category_id})" id="${'cateBtn'+element.category_id}" class="px-4 py-2 text-sm md:text-base text-cateBtnColor font-medium rounded bg-cateBtnBg">${element.category}</button>
         `;
         cateContainer.appendChild(div);
         showDefalutActiveBtn();
@@ -54,15 +54,14 @@ const showCards = (cards) => {
         const minutesFloat = totalMinutes % 60;
         const minutes = Math.floor(minutesFloat);
         const time = `${hours}hrs ${minutes}min ago`
-        // console.log(`Total Minutes: ${totalMinutes} -> hours: ${hoursFloat} : float-Hours: ${hours} => minutes: ${minutesFloat} : minutes float: ${minutes}`);
-        // console.log("videos posted time: ",time)
+
         const carddiv = document.createElement('div');
         carddiv.classList = `card card-compact rounded-none`;
         carddiv.innerHTML = `
         <!-- single card -->
           <figure class="relative">
             <img class="w-full h-48 rounded-lg" src="${card.thumbnail}" alt="Shoes" />
-              <p class="absolute bottom-2 right-2 text-white text-xs bg-gray-800 px-2 py-1 rounded font-medium bg-red">${card.others.posted_date ? time : ''}</p>
+              <p class="absolute bottom-2 right-2 text-white text-xs bg-timeBg px-2 py-1 rounded font-medium bg-red">${card.others.posted_date ? time : ''}</p>
                 </figure>
               <!-- videos desc -->
             <div class="flex gap-3 mt-4">
@@ -98,9 +97,9 @@ const categoriesShow = (target, cateId) => {
     const btnparent = target.parentElement.parentElement.children;
     for(const btnPar of btnparent){
       const btn = btnPar.children[0];
-      btn.classList = `px-4 py-2 text-base text-cateBtnColor font-medium rounded bg-cateBtnBg`;
+      btn.classList = `px-4 py-2 text-sm md:text-base text-cateBtnColor font-medium rounded bg-cateBtnBg`;
     }
-    target.classList = `px-4 py-2 text-base text-white bg-activeBg font-medium rounded`;
+    target.classList = `px-4 py-2 text-sm md:text-base text-white bg-activeBg font-medium rounded`;
 }
 
 // sort by view button
